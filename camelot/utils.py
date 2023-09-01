@@ -363,6 +363,7 @@ def text_in_bbox(bbox, text):
         for t in text
         if lb[0] - 2 <= (t.x0 + t.x1) / 2.0 <= rt[0] + 2
         and lb[1] - 2 <= (t.y0 + t.y1) / 2.0 <= rt[1] + 2
+        and bbox_area(t) > 0
     ]
 
     # Avoid duplicate text by discarding overlapping boxes
